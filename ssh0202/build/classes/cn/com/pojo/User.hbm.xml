@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<!-- 说明表和类的关联关系 -->
+	<class name="cn.com.pojo.User" table="user">
+		<!-- 主键的生成策略 -->
+		<id name="userid" column="userid">
+			<!-- native本地生成，主要针对mysql，sqlserver提供的主键自增生成
+			     Assigned 用户指定 
+			     Sequence 序列自增  oracle数据 -->
+			<generator class="native"></generator>
+		</id>
+		<!-- 设置表中字段和类中属性的关联关系  name指定类中属性名  column指定表中字段名  type属性的类型
+		             如果类中属性名和列名一致 则column可以不设置  hibernate会自动检测字段属性类型 所有type也可以不写-->
+		<property name="username"></property>
+		<property name="password"></property>
+	</class>
+</hibernate-mapping>
